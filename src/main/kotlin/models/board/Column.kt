@@ -6,7 +6,7 @@ enum class Column {
     fun leftColumns(): List<Column> {
         val list: MutableList<Column> = mutableListOf()
         var i = this.ordinal
-        while (i >= ONE.ordinal) {
+        while (i > ONE.ordinal) {
             list.add(entries[i])
             i--
         }
@@ -16,7 +16,7 @@ enum class Column {
     fun rightColumns(): List<Column> {
         val list: MutableList<Column> = mutableListOf()
         var i = this.ordinal
-        while (i <= SEVEN.ordinal) {
+        while (i < SEVEN.ordinal) {
             list.add(entries[i])
             i++
         }
@@ -25,7 +25,7 @@ enum class Column {
 
     companion object {
         fun build(index: Int): Column {
-            assert(index > -1 && index < 7)
+            assert(index in 1..7)
             return when (index) {
                 1 -> ONE
                 2 -> TWO
@@ -33,7 +33,8 @@ enum class Column {
                 4 -> FOUR
                 5 -> FIVE
                 6 -> SIX
-                else -> SEVEN
+                7 -> SEVEN
+                else -> throw Exception("This column does not exist")
             }
         }
     }

@@ -1,6 +1,6 @@
-package models
+package models.board
 
-import models.board.Board
+import models.Color
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals

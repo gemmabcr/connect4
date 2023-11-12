@@ -6,9 +6,9 @@ enum class Row {
     fun upRows(): List<Row> {
         val list: MutableList<Row> = mutableListOf()
         var i = this.ordinal
-        while (i >= FIRST.ordinal) {
+        while (i < SIXTH.ordinal) {
             list.add(Row.entries[i])
-            i--
+            i++
         }
         return list.toList()
     }
@@ -16,9 +16,9 @@ enum class Row {
     fun downRows(): List<Row> {
         val list: MutableList<Row> = mutableListOf()
         var i = this.ordinal
-        while (i <= SIXTH.ordinal) {
+        while (i > FIRST.ordinal) {
             list.add(Row.entries[i])
-            i++
+            i--
         }
         return list.toList()
     }
