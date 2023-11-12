@@ -27,10 +27,6 @@ class Hole(
         return column == col && row == r
     }
 
-    fun isLastRow(): Boolean {
-        return row == Row.last()
-    }
-
     fun change(newColor: Color) {
         color = newColor
     }
