@@ -6,8 +6,10 @@ enum class Column {
     fun leftColumns(): List<Column> {
         val list: MutableList<Column> = mutableListOf()
         var i = this.ordinal
-        while (i > ONE.ordinal) {
-            list.add(entries[i])
+        while (i >= ONE.ordinal) {
+            if (i != this.ordinal) {
+                list.add(entries[i])
+            }
             i--
         }
         return list.toList()
@@ -16,8 +18,10 @@ enum class Column {
     fun rightColumns(): List<Column> {
         val list: MutableList<Column> = mutableListOf()
         var i = this.ordinal
-        while (i < SEVEN.ordinal) {
-            list.add(entries[i])
+        while (i <= SEVEN.ordinal) {
+            if (i != this.ordinal) {
+                list.add(entries[i])
+            }
             i++
         }
         return list.toList()
