@@ -14,7 +14,6 @@ class RegistryTest {
         registry = Registry(game)
     }
 
-
     @Test
     fun whenCreatedReturnUndoableAndRedoableFalse (){
         assertEquals(registry.undoable(), false)

@@ -4,7 +4,7 @@ class State {
     private var stateValue: StateValue = StateValue.START
 
     fun next() {
-        stateValue = StateValue.entries[stateValue.ordinal + 1]
+        stateValue = StateValue.next(stateValue)
     }
 
     fun getValue(): StateValue = stateValue
