@@ -10,10 +10,13 @@ repositories {
     mavenCentral()
 }
 
+val mockkVersion: String by project
+
 dependencies {
     testImplementation(kotlin("test"))
     testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
     testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
+    testImplementation("io.mockk:mockk:$mockkVersion")
 }
 
 tasks.test {
