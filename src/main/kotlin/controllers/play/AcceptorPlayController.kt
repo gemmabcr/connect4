@@ -1,5 +1,5 @@
 package controllers.play
 
 interface AcceptorPlayController {
-    fun accept(playerControllerVisitor: PlayControllerVisitor)
+    fun accept(playerControllerVisitor: PlayVisitor)
 }

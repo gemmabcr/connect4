@@ -10,7 +10,7 @@ import views.ViewFactory
 class PlayController(
     session: Session,
     private val viewFactory: ViewFactory,
-) : Controller(session), PlayControllerVisitor {
+) : Controller(session), PlayVisitor {
 
     private val actionController: ActionController = ActionController(session)
     private val undoController: UndoController = UndoController(session)
