@@ -16,20 +16,20 @@ class TurnTest {
     }
 
     @Test
-    fun whenCreatedActivePlayerReturnRedUserPlayer (){
+    fun `when created active player return red user player` (){
         assertTrue(turn.getActivePlayer() is UserPlayer)
         assertEquals(turn.getActiveColor(), Color.RED)
     }
 
     @Test
-    fun nextPlayerReturnYellowMachinePlayer (){
+    fun `next player return yellow machine player` (){
         turn.next()
         assertTrue(turn.getActivePlayer() is MachinePlayer)
         assertEquals(turn.getActiveColor(), Color.YELLOW)
     }
 
     @Test
-    fun whenCreatedUserPlayersReturn1 (){
+    fun `when created user players return 1` (){
         assertEquals(turn.userPlayers(), 1)
     }
 }

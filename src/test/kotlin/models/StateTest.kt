@@ -5,20 +5,20 @@ import kotlin.test.assertEquals
 
 class StateTest {
     @Test
-    fun whenCreatedStateValueReturnStart (){
+    fun `when created state value return start` (){
         val state = State()
         assertEquals(state.getValue(), StateValue.START)
     }
 
     @Test
-    fun whenStateIsStartAndNextThenStateValueReturnInGame (){
+    fun `when state is start and next then state value return in game` (){
         val state = State()
         state.next()
         assertEquals(state.getValue(), StateValue.IN_GAME)
     }
 
     @Test
-    fun whenStateIsInGameAndNextThenStateValueReturnResume (){
+    fun `when state is in game and next then state value return resume` (){
         val state = State()
         state.next()
         state.next()
@@ -26,7 +26,7 @@ class StateTest {
     }
 
     @Test
-    fun whenStateIsResumeAndNextThenStateValueReturnExit (){
+    fun `when state is resume and next then state value return exit` (){
         val state = State()
         state.next()
         state.next()
@@ -35,7 +35,7 @@ class StateTest {
     }
 
     @Test
-    fun whenStateIsExitAndNextThenStateValueReturnNull (){
+    fun `when state is exit and next then state value return null` (){
         val state = State()
         state.next()
         state.next()

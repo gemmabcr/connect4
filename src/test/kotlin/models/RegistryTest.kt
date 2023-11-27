@@ -15,7 +15,7 @@ class RegistryTest {
     }
 
     @Test
-    fun whenCreatedReturnUndoableAndRedoableFalse (){
+    fun `when created return undoable and redoable false` (){
         assertEquals(registry.undoable(), false)
         assertEquals(registry.redoable(), false)
     }
