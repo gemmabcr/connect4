@@ -3,10 +3,13 @@ package controllers.logic
 import controllers.ResumeController
 import controllers.StartController
 import controllers.play.PlayController
+import io.mockk.mockk
+import io.mockk.verify
 import models.Session
 import models.StateValue
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 
@@ -48,5 +51,17 @@ class LogicTest {
         session.nextState()
         assertEquals(session.getValueState(), StateValue.EXIT)
         assertEquals(logic.getController(), null)
+    }
+
+    @Disabled
+    @Test
+    fun `given logic and first execute in play controller calls next session then getController is called 4 times`() {
+        session = mockk<Session>()
+        logic = LogicForTesting(session)
+
+        logic.execute()
+
+        //TODO: fix test
+        verify(exactly = 4) { logic.getController() }
     }
 }
