@@ -2,14 +2,15 @@ package controllers.play
 
 import controllers.Controller
 import models.Session
-import views.console.ErrorView
+import views.ViewFactory
 import views.console.utils.ErrorMessage
 
 class RedoController(
-    session: Session
+    session: Session,
+    private val viewFactory: ViewFactory
 ): Controller(session) {
     override fun execute() = when {
         session.redoable() -> session.redo()
-        else -> ErrorView(ErrorMessage.NOT_REDOABLE).message()
+        else -> viewFactory.createErrorView(ErrorMessage.NOT_REDOABLE).message()
     }
 }

@@ -12,9 +12,9 @@ class PlayController(
     private val viewFactory: ViewFactory,
 ) : Controller(session), PlayVisitor {
 
-    private val actionController: ActionController = ActionController(session)
-    private val undoController: UndoController = UndoController(session)
-    private val redoController: RedoController = RedoController(session)
+    private val actionController: ActionController = ActionController(session, viewFactory)
+    private val undoController: UndoController = UndoController(session, viewFactory)
+    private val redoController: RedoController = RedoController(session, viewFactory)
 
     override fun execute() {
         viewFactory.createBoardView().print(session.getBoard())
