@@ -1,11 +1,11 @@
 package models.menu
 
 import models.commands.Command
-import views.console.MenuView
+import views.ViewFactory
 
-abstract class Menu {
+abstract class Menu(viewFactory: ViewFactory) {
     private val commandList: MutableList<Command> = mutableListOf()
-    private var menuView: MenuView = MenuView()
+    private val menuView = viewFactory.createMenuView()
 
     fun askCommand(): Command {
         return commandList[menuView.askOption(commandList.map { it.getTitle() })]

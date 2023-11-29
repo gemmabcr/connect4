@@ -26,7 +26,7 @@ class PlayController(
     }
 
     override fun visit(userPlayer: UserPlayer) {
-        PlayMenu(this).execute()
+        PlayMenu(this, viewFactory).execute()
     }
 
     override fun visit(machinePlayer: MachinePlayer) {
