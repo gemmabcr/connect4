@@ -12,8 +12,8 @@ class Registry(private val game: Game) {
         for (i in 0..< firstPrevious) {
             mementos.removeAt(0)
         }
-        firstPrevious = 0;
-        mementos.add(firstPrevious, game.createMemento());
+        firstPrevious = 0
+        mementos.add(firstPrevious, game.createMemento())
     }
 
     fun undo() {

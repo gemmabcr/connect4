@@ -12,6 +12,6 @@ abstract class Menu(viewFactory: ViewFactory) {
     }
 
     fun addCommand(command: Command) {
-        commandList.add(command);
+        commandList.add(command)
     }
 }
